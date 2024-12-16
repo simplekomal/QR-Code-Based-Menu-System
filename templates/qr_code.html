@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+        img {
+            margin: 20px 0;
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+    <script type="text/javascript">
+        // Redirect after 10 seconds if QR code is not scanned
+        setTimeout(function() {
+            window.location.href = "/menu";  // Redirect to the menu page
+        }, 10000);  // 10 seconds
+    </script>
+</head>
+<body>
+    <h1>Scan this QR Code to View the Menu</h1>
+    <img src="{{ url_for('static', filename='qr_code.png') }}" alt="QR Code">
+    <p>If you don't scan the QR code within 10 seconds, you'll be redirected to the menu page.</p>
+</body>
+</html>
